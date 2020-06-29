@@ -1,0 +1,56 @@
+### 1 Affiche la liste de tous les acteurs
+GET http://localhost:3000/actors
+
+### 2 Affiche les infos d'un acteur
+GET http://localhost:3000/actors/4
+
+### 3 Affiche les acteurs dont la date de naissance est supérieure au chiffre passé en paramètre
+GET http://localhost:3000/actors/birthdate/1980
+
+### 4 Affiche les acteurs dont le nom commence par M
+GET http://localhost:3000/actors/name/M
+
+### 5 Affiche les acteurs selon ordre alphabétique de noms
+GET http://localhost:3000/actors/names/order
+
+### 6 Affiche les acteurs selon ordre de date anniversaire donné en paramètre
+GET http://localhost:3000/actors/birthdates/asc
+
+### 7 Ajoute un acteur
+POST http://localhost:3000/actors
+Content-Type: application/json
+
+{
+  "name": "Arthur Darvill",
+  "birthdate": 1982,
+  "isTheDoctor": false,
+  "nbOfSeason": 3
+}
+
+### 8 Modifie un acteur
+PUT http://localhost:3000/actors/6
+Content-Type: application/json
+
+{
+  "name": "Arthur Darvill",
+  "birthdate": 1982,
+  "isTheDoctor": false,
+  "nbOfSeason": 2
+}
+
+### 9 Modifie le toggle d'un acteur
+PUT http://localhost:3000/actors/4
+Content-Type: application/json
+
+{
+    "name": "Jenna Coleman",
+    "birthdate": 1986,
+    "isTheDoctor": 1,
+    "nbOfSeason": 3
+}
+
+### 10 Supprime un acteur
+DELETE http://localhost:3000/actors/5
+
+### 11 Supprime les acteurs dont le bool est false
+DELETE http://localhost:3000/actors
