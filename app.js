@@ -128,8 +128,7 @@ app.delete('/actors/:id', (req, res) => {
 
 // 11 Supprime les acteurs dont le bool est false
 app.delete('/actors/', (req, res) => {
-  const actorId = req.params.id;
-  connection.query('DELETE FROM actor WHERE isTheDoctor = 0', actorId, (err, results) => {
+  connection.query('DELETE FROM actor WHERE isTheDoctor = 0', (err, results) => {
     if (err) {
       return (
         res.status(500).json({ error: `An error occurred: ${err.message}` })
